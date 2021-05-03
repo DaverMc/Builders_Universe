@@ -28,13 +28,20 @@ public abstract class AbstractCommand {
         this.description = description;
     }
 
-    public void registerSubCommand(AbstractSubCommand subCommand){
-         Arrays.stream(subCommand.getClass().getMethods())
+    public void registerSubCommand(AbstractSubCommand subCommand) {
+        Arrays.stream(subCommand.getClass().getMethods())
                 .filter(method -> method.isAnnotationPresent(SubCommand.class))
                 .forEach(method -> {
                     SubCommand anno = method.getAnnotation(SubCommand.class);
-                    this.getSubCommandMethods().put(subCommand.getName() + " " + anno.name(), method);
+                    this.subCommands.put(subCommand.getName() + " " + anno.name(), method);
                 });
+        try {
+            Method method = subCommand.getClass().getMethod("run");
+            this.subCommands.put(subCommand.getName(), method);
+        }catch (NoSuchMethodException e){
+            e.printStackTrace();
+        }
+
     }
 
     private Map<String, Method> getSubCommandMethods(){

@@ -5,9 +5,9 @@ import de.buun.haven.Loggers;
 import de.buun.haven.SpacePlugin;
 import de.buun.haven.util.Reflections;
 import de.buun.haven.util.Registration;
+import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
-import org.bukkit.command.CommandMap;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.SimpleCommandMap;
 import org.bukkit.command.defaults.BukkitCommand;
@@ -17,9 +17,10 @@ import java.util.stream.Collectors;
 
 public class CommandRegistration implements Registration<AbstractCommand> {
 
+    @Getter
     private final Map<String, AbstractCommand> commandMap;
 
-    public CommandRegistration(SpacePlugin plugin){
+    public CommandRegistration(){
         this.commandMap = new HashMap<>();
     }
 
@@ -27,6 +28,7 @@ public class CommandRegistration implements Registration<AbstractCommand> {
     public void register(AbstractCommand value) {
         if(!bukkitRegister(value)) return;
        commandMap.put(value.getName(), value);
+       Loggers.logInfo("Registered /" + value.getName() + " commmand!");
     }
 
     private boolean bukkitRegister(AbstractCommand command){
@@ -36,8 +38,8 @@ public class CommandRegistration implements Registration<AbstractCommand> {
         BukkitCommand bukkitCommand = new BukkitCommand(command.getName()) {
             @Override
             public boolean execute(CommandSender commandSender, String s, String[] strings) {
-
-                return false;
+                new CommandExecution(command, commandSender, strings);
+                return true;
             }
         };
 
@@ -81,13 +83,4 @@ public class CommandRegistration implements Registration<AbstractCommand> {
         Reflections.setFieldValue(map, "knownCommands", cmdMap);
 
     }
-
-    private List<String> getAliases(AbstractCommand command){
-
-    }
-
-    private void execute(){
-
-    }
-
 }
