@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="PlanetFormer" />
+        <module name="BuildInGalaxy" />
+        <module name="Space Haven" />
+        <module name="AntiEntity" />
+        <module name="Application Shuttle" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="AntiEntity" target="15" />
+      <module name="Application Shuttle" target="15" />
+      <module name="BuildInGalaxy" target="15" />
+      <module name="PlanetFormer" target="1.5" />
+      <module name="Space Haven" target="15" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,7 @@
+name: AntiEntity
+author: Daver_Mc
+version: 1.0.0
+main: de.daver.antientity.AntiEntity
+commands:
+  aereload:
+    aliases: [aer]

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AntiEntity/AntiEntity.iml" filepath="$PROJECT_DIR$/AntiEntity/AntiEntity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Application Shuttle/Application Shuttle.iml" filepath="$PROJECT_DIR$/Application Shuttle/Application Shuttle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BuildInGalaxy/BuildInGalaxy.iml" filepath="$PROJECT_DIR$/BuildInGalaxy/BuildInGalaxy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PlanetFormer/PlanetFormer.iml" filepath="$PROJECT_DIR$/PlanetFormer/PlanetFormer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Space Haven/Space Haven.iml" filepath="$PROJECT_DIR$/Space Haven/Space Haven.iml" />
+    </modules>
+  </component>
+</project>
