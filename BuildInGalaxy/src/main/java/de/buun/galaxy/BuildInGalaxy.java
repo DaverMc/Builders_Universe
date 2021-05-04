@@ -1,5 +1,13 @@
 package de.buun.galaxy;
 
-public class BuildInGalaxy {
+import de.buun.haven.SpacePlugin;
+import lombok.Getter;
+
+public class BuildInGalaxy extends SpacePlugin {
+
+    @Getter
+    private static BuildInGalaxy instance;
+
+
 
 }

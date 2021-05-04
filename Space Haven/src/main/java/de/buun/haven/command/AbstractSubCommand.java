@@ -7,6 +7,6 @@ public abstract class AbstractSubCommand {
     @Getter
     private String name;
 
-    public abstract void run();
+    protected abstract void run();
 
 }
