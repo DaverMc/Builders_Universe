@@ -9,5 +9,13 @@ public class BuildInGalaxy extends SpacePlugin {
     private static BuildInGalaxy instance;
 
 
+    @Override
+    protected void onInitialisation() {
 
+    }
+
+    @Override
+    protected void onTermination() {
+
+    }
 }
