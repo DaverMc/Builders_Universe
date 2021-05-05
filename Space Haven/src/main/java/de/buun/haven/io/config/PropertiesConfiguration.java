@@ -45,11 +45,11 @@ public class PropertiesConfiguration implements Configuration{
         } else if (parts.length == 2) {
             return parts[1];
         } else {
-            String value = "";
+            StringBuilder builder = new StringBuilder();
             for (int i = 1; i < parts.length; i++) {
-                value = value + ": " + parts[i];
+                builder.append(": ").append(parts[i]);
             }
-            return value.substring(2);
+            return builder.substring(2);
         }
     }
 
