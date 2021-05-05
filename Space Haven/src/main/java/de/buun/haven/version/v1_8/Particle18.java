@@ -4,6 +4,7 @@ import de.buun.haven.entity.particle.AbstractParticle;
 import de.buun.haven.entity.particle.ParticleType;
 import de.buun.haven.util.PacketSender;
 import de.buun.haven.util.Reflections;
+import net.minecraft.server.v1_8_R3.EnumParticle;
 import net.minecraft.server.v1_8_R3.PacketPlayOutWorldParticles;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -15,6 +16,7 @@ public class Particle18 implements AbstractParticle {
     public Particle18(ParticleType type){
         packet = new PacketPlayOutWorldParticles();
         Reflections.setFieldValue(packet, "j", true);
+        Reflections.setFieldValue(packet, "a", EnumParticle.a(type.getId()));
     }
 
     public void setAmount(int amount){
